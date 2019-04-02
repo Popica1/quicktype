@@ -15,15 +15,15 @@ const words = [
 	'marti'
 ];
 
-function startGame(){
+function startGame() {
 	showWord(words);
 	wordInput.addEventListener('input',startMatch);
 	setInterval(countDown,1000);
 	setInterval(checkPlay,50);
 }
 
-function startMatch(){
-	if(matchWord()){
+function startMatch() {
+	if (matchWord()) {
 		activePlay = 1;
 		time = 6;
 		showWord(words);
@@ -33,12 +33,12 @@ function startMatch(){
 	displayScore.innerHTML = score;
 }
 
-function matchWord(){
-	if(wordInput.value === wordCurrent.innerHTML){
+function matchWord() {
+	if (wordInput.value === wordCurrent.innerHTML) {
 		i += 1;
 		message.innerHTML = 'Correct';
 		return 1;
-	}else{
+	} else {
 		message.innerHTML = '';
 		return 0;
 	}
