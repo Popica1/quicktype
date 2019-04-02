@@ -1,35 +1,26 @@
-var time = 5;
-var score = 0;
-var activePlay = 1;
+let time = 5;
+let score = 0;
+let activePlay = 1;
+let i = 0;
 
 const wordInput = document.getElementById("word-input");
 const wordCurrent = document.getElementById("current-word");
-
 const displayScore = document.getElementById("score");
 const displayTime = document.getElementById("time");
-
 const message = document.getElementById("message");
-
 const words = [
 	'minge',
 	'joi',
 	'finish',
 	'marti'
-	
 ];
-
-const lungime = words.length;
-
 
 function startGame(){
 	showWord(words);
 	wordInput.addEventListener('input',startMatch);
 	setInterval(countDown,1000);
 	setInterval(checkPlay,50);
-	
 }
-
-let i = 0;
 
 function startMatch(){
 	if(matchWord()){
@@ -41,7 +32,6 @@ function startMatch(){
 	}
 	displayScore.innerHTML = score;
 }
-
 
 function matchWord(){
 	if(wordInput.value === wordCurrent.innerHTML){
